@@ -1,0 +1,47 @@
+/**
+* @button Style up any div like a button
+*/
+@mixin button(
+    $background-color: royalblue,
+    $font-size: 1.2em,
+    $shadow-color: #383838
+) {
+    // Set font 
+    font: {
+        family: sans-serif;
+        size: $font-size;
+    }
+    color: lighten($background-color, 30);
+
+    // Set other colors
+    background-color: $background-color;
+    border: none;
+
+
+    // text decorations
+    text-transform: uppercase;
+    text-align: center;
+
+    // Set cursor
+    cursor: pointer;
+
+    // define shape
+    padding: $font-size*0.3 $font-size*1.3;
+    margin: 1px;
+    border-radius: 3px;
+
+    // Change hover property
+    &:hover {
+        box-shadow: 1px 1px 2px 1px lighten(
+            $shadow-color,
+            40
+        );
+        color: lighten($background-color, 50);
+    }
+
+    // Change when clicked property
+    &:active {
+        box-shadow: 0 0 2px 1px $shadow-color;
+        background-color: darken($background-color, 20);
+    }
+}
